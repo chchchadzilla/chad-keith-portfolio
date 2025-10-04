@@ -1,50 +1,105 @@
-# React + TypeScript + Vite
+# Chad Keith Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Professional portfolio website showcasing Chad Keith's career in AI, business operations, and music. Features an innovative parallax background system, interactive rolodex animation, and modern responsive design.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Current deployment: [https://wlgh3f0r6an2.space.minimax.io](https://wlgh3f0r6an2.space.minimax.io)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Parallax Background System**: Dynamic interlocking blocks that create seamless section transitions
+- **Interactive Rolodex**: Click-triggered spinning animation showcasing skills and expertise  
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Custom Music Player**: Interactive audio player with draggable controls
+- **Performance Optimized**: Fast loading with optimized animations and assets
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + Custom CSS
+- **Animations**: GSAP (GreenSock) + CSS Transitions
+- **3D Graphics**: Three.js + React Three Fiber (optional)
+- **Build Tool**: Vite with TypeScript support
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/chchchadzilla/chad-keith-portfolio.git
+cd chad-keith-portfolio
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
+# or
+pnpm install
 ```
+
+3. Start development server:
+```bash
+npm run dev
+# or
+pnpm dev
+```
+
+4. Build for production:
+```bash
+npm run build
+# or
+pnpm build
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/
+│   ├── animations/          # GSAP animations and transitions
+│   ├── sections/           # Main page sections
+│   ├── ui/                 # Reusable UI components
+│   └── conversatrait/      # ConversaTrait demo components
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions
+└── assets/                 # Static assets
+
+public/
+├── images/                 # Image assets
+├── audio/                  # Audio files for music player
+└── data/                   # JSON data files
+```
+
+## 🎨 Key Components
+
+- **ParallaxBlocks**: Dynamic background transition system
+- **Rolodex**: Interactive skill showcase with spinning animation
+- **MusicPlayer**: Custom audio player with drag controls
+- **FloatingGallery**: Hover-activated image gallery
+- **ConversaTraitSection**: AI psychoanalytical tool demo
+
+## 🚀 Deployment
+
+The project is configured for deployment on various platforms:
+
+### Vercel/Netlify
+```bash
+npm run build
+# Deploy the dist/ folder
+```
+
+### Custom Server
+```bash
+npm run build
+# Serve dist/ folder with any static file server
+```
+
+## 📄 License
+
+© 2025 Chad Keith. All rights reserved.
+
+## 🤝 Contact
+
+- **Website**: [mynamesucks.com](https://mynamesucks.com)
+- **Email**: chad@mynamesucks.com
+- **Location**: Lake Balboa, CA
