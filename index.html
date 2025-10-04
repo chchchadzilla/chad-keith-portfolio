@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Chad Keith - AI Researcher & Full-Stack Developer | ConversaTrait Creator</title>
+    <meta name="description" content="Chad Keith: From Warped Tour musician to AI pioneer. Creator of ConversaTrait - revolutionary personality analysis technology. AI Fellowship researcher, full-stack developer, and innovation expert." />
+    <meta name="keywords" content="Chad Keith, AI researcher, ConversaTrait, personality analysis, machine learning, full-stack developer, musician, Warped Tour, AI fellowship" />
+    <meta name="author" content="Chad Keith" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Chad Keith - AI Researcher & ConversaTrait Creator" />
+    <meta property="og:description" content="Revolutionary AI personality analysis technology and cutting-edge development from musician turned AI pioneer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chadkeith.com" />
+    <meta property="og:image" content="/images/chad-keith-professional.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chad Keith - AI Researcher & ConversaTrait Creator" />
+    <meta name="twitter:description" content="Revolutionary AI personality analysis technology and cutting-edge development" />
+    <meta name="twitter:image" content="/images/chad-keith-professional.png" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/images/chad-keith-professional.png" as="image" />
+    <link rel="preload" href="/images/ComfyUI_01029_.png" as="image" />
+    
+    <!-- Font Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Performance & Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#ff0000" />
+    <meta name="color-scheme" content="dark" />
+    
+    <style>
+      /* Critical CSS for faster loading */
+      body {
+        margin: 0;
+        background-color: #000000;
+        color: #ffffff;
+        font-family: 'Inter', system-ui, sans-serif;
+        overflow-x: hidden;
+      }
+      
+      /* Loading state */
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Prevent flash of unstyled content */
+      .loading {
+        position: fixed;
+        inset: 0;
+        background: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      /* Custom cursor preparation */
+      * {
+        cursor: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Fallback loading content -->
+      <div class="loading">
+        <div style="text-align: center;">
+          <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">
+            Chad <span style="color: #ff0000;">Keith</span>
+          </h1>
+          <p style="color: #666; font-size: 1.1rem;">Loading portfolio...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance Analytics (if needed) -->
+    <script>
+      // Basic performance tracking
+      window.addEventListener('load', () => {
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        console.log('Portfolio loaded in:', loadTime + 'ms');
+      });
+    </script>
+  </body>
+</html>
