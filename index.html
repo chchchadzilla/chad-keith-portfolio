@@ -1,99 +1,895 @@
-<!doctype html>
-<html lang="en" class="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
-    <title>Chad Keith - AI Researcher & Full-Stack Developer | ConversaTrait Creator</title>
-    <meta name="description" content="Chad Keith: From Warped Tour musician to AI pioneer. Creator of ConversaTrait - revolutionary personality analysis technology. AI Fellowship researcher, full-stack developer, and innovation expert." />
-    <meta name="keywords" content="Chad Keith, AI researcher, ConversaTrait, personality analysis, machine learning, full-stack developer, musician, Warped Tour, AI fellowship" />
-    <meta name="author" content="Chad Keith" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Chad Keith - AI Researcher & ConversaTrait Creator" />
-    <meta property="og:description" content="Revolutionary AI personality analysis technology and cutting-edge development from musician turned AI pioneer" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://chadkeith.com" />
-    <meta property="og:image" content="/images/chad-keith-professional.png" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chad Keith - AI Researcher & ConversaTrait Creator" />
-    <meta name="twitter:description" content="Revolutionary AI personality analysis technology and cutting-edge development" />
-    <meta name="twitter:image" content="/images/chad-keith-professional.png" />
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/images/chad-keith-professional.png" as="image" />
-    <link rel="preload" href="/images/ComfyUI_01029_.png" as="image" />
-    
-    <!-- Font Preloads -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- Performance & Security -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    
-    <!-- Theme -->
-    <meta name="theme-color" content="#ff0000" />
-    <meta name="color-scheme" content="dark" />
-    
-    <style>
-      /* Critical CSS for faster loading */
-      body {
-        margin: 0;
-        background-color: #000000;
-        color: #ffffff;
-        font-family: 'Inter', system-ui, sans-serif;
-        overflow-x: hidden;
-      }
-      
-      /* Loading state */
-      #root {
-        min-height: 100vh;
-      }
-      
-      /* Prevent flash of unstyled content */
-      .loading {
-        position: fixed;
-        inset: 0;
-        background: #000000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-      }
-      
-      /* Custom cursor preparation */
-      * {
-        cursor: none !important;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <!-- Fallback loading content -->
-      <div class="loading">
-        <div style="text-align: center;">
-          <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">
-            Chad <span style="color: #ff0000;">Keith</span>
-          </h1>
-          <p style="color: #666; font-size: 1.1rem;">Loading portfolio...</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chad Keith — ConversaTrait</title>
+<meta name="description" content="Founder of ConversaTrait. AI personality analysis engine. 105,000 lines of code. Built solo in under a year. Yes, Chad is his real name.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+:root {
+  --ink:    #0d0d0d;
+  --red:    #d42020;
+  --paper:  #faf8f5;
+  --paper2: #f2efea;
+  --rule:   #e0dbd4;
+  --mid:    #6b6560;
+  --mono:   'JetBrains Mono', monospace;
+  --sans:   'Space Grotesk', sans-serif;
+  --pad:    clamp(28px, 7vw, 100px);
+  --max:    1080px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.rule { width:100%; height:1px; background: var(--rule); }
+.mono { font-family: var(--mono); }
+.red  { color: var(--red); }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  padding: 20px var(--pad);
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(250,248,245,0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo {
+  font-family: var(--mono); font-weight:700; font-size:.95rem;
+  letter-spacing:.05em; text-transform:uppercase;
+}
+.nav-logo span { color: var(--red); }
+.nav-tag {
+  font-family: var(--mono); font-size:.62rem;
+  letter-spacing:.06em; color: var(--mid);
+  text-align: right; line-height: 1.6;
+}
+.nav-tag a {
+  color: var(--red); font-weight:700;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s; padding-bottom:1px;
+}
+.nav-tag a:hover { border-color: var(--red); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 72px;
+}
+.hero-left {
+  padding: 80px var(--pad) 80px var(--pad);
+  border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 72px);
+}
+.hero-right {
+  padding: 80px var(--pad);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+  min-height: calc(100vh - 72px);
+  background: var(--paper2);
+}
+
+.hero-tag {
+  font-family: var(--mono); font-size:.65rem;
+  letter-spacing:.18em; text-transform:uppercase;
+  color: var(--red); margin-bottom:28px;
+  display:flex; align-items:center; gap:12px;
+}
+.hero-tag::before {
+  content:''; width:28px; height:1px; background:var(--red);
+}
+
+.hero-name {
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 800; letter-spacing:-.045em;
+  line-height: .96; margin-bottom:10px;
+  overflow: hidden;
+}
+.hero-name .line { overflow:hidden; }
+.hero-name .line span { display:block; }
+
+.hero-product {
+  font-family: var(--mono); font-size:.78rem;
+  letter-spacing:.12em; text-transform:uppercase;
+  color: var(--mid); margin-bottom:32px;
+}
+.hero-product em { color: var(--red); font-style:normal; font-weight:700; }
+
+.hero-pitch {
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height:1.78; color: var(--ink);
+  max-width: 460px; margin-bottom:12px;
+  font-weight: 400;
+}
+.hero-pitch strong { font-weight:700; }
+
+.hero-aside {
+  font-family: var(--mono); font-size:.68rem;
+  color: var(--mid); margin-bottom:36px;
+  font-style: italic; line-height:1.6;
+  max-width: 400px;
+}
+
+.hero-cta-row {
+  display:flex; gap:12px; flex-wrap:wrap;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  font-family: var(--mono); font-weight:700; font-size:.75rem;
+  letter-spacing:.08em; text-transform:uppercase;
+  padding:14px 28px; display:inline-flex; align-items:center; gap:9px;
+  transition: all .2s; border:none; cursor:pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+  white-space: nowrap;
+}
+.btn-dark { background:var(--ink); color:var(--paper); }
+.btn-dark:hover {
+  background: var(--red);
+  box-shadow: 0 8px 32px rgba(212,32,32,.28);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background:transparent; color:var(--ink);
+  border:1.5px solid rgba(13,13,13,.25);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%);
+}
+.btn-outline:hover {
+  border-color:var(--red); color:var(--red);
+  transform: translateY(-2px);
+}
+
+/* ── HEADSHOT + FACTS ── */
+.photo-wrap {
+  width: 190px; height:190px;
+  border-radius:50%;
+  border: 2px solid var(--ink);
+  box-shadow:
+    0 0 0 8px rgba(13,13,13,.05),
+    0 0 0 16px rgba(212,32,32,.06),
+    0 24px 64px rgba(13,13,13,.14);
+  overflow:hidden; margin-bottom:32px; flex-shrink:0;
+}
+.photo-wrap img {
+  width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+}
+
+.quick-facts {
+  display:flex; flex-direction:column; gap:16px;
+  margin-bottom:36px; width:100%;
+}
+.fact-row {
+  display:flex; align-items:baseline; gap:14px;
+}
+.fact-num {
+  font-size:2rem; font-weight:800; letter-spacing:-.04em;
+  color:var(--ink); line-height:1; flex-shrink:0;
+  min-width:90px;
+}
+.fact-num em { color:var(--red); font-style:normal; }
+.fact-text {
+  font-family: var(--mono); font-size:.67rem;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--mid); line-height:1.6;
+}
+.fact-text small {
+  display:block; font-size:.58rem;
+  color:rgba(107,101,96,.6); letter-spacing:.06em;
+  font-style:italic; text-transform:none;
+  margin-top:2px;
+}
+
+.contact-col {
+  display:flex; flex-direction:column; gap:10px; width:100%;
+}
+.contact-label {
+  font-family:var(--mono); font-size:.58rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--red); margin-bottom:8px;
+}
+.contact-line {
+  font-family:var(--mono); font-size:.72rem;
+  letter-spacing:.06em; padding:10px 16px;
+  border:1px solid var(--rule); color:var(--ink);
+  display:flex; align-items:center; gap:10px;
+  transition:all .2s;
+  clip-path: polygon(0 0, 100% 0, 100% 68%, 96% 100%, 0 100%);
+}
+.contact-line:hover { border-color:var(--red); color:var(--red); }
+.contact-line.primary {
+  background:var(--ink); color:var(--paper);
+  border-color:var(--ink); font-weight:700;
+}
+.contact-line.primary:hover {
+  background:var(--red); border-color:var(--red);
+  box-shadow: 0 6px 24px rgba(212,32,32,.25);
+}
+
+/* ── DIVIDER BAND ── */
+.divider-band {
+  background:var(--ink); color:var(--paper);
+  padding:28px var(--pad);
+  display:flex; align-items:center; gap:32px;
+  overflow:hidden;
+}
+.divider-band .db-label {
+  font-family:var(--mono); font-size:.62rem;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.3); white-space:nowrap; flex-shrink:0;
+}
+.db-scroll { display:flex; overflow:hidden; flex:1; }
+.db-track  { display:flex; white-space:nowrap; }
+.db-item {
+  font-family:var(--mono); font-size:.68rem;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:rgba(255,255,255,.4); padding:0 32px; flex-shrink:0;
+}
+.db-item.hi { color:var(--red); }
+
+/* ── SCIENCE ── */
+.science-section {
+  padding: 90px var(--pad);
+  max-width:var(--max); margin:0 auto;
+}
+.section-eyebrow {
+  font-family:var(--mono); font-size:.62rem;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--red); margin-bottom:18px;
+  display:flex; align-items:center; gap:12px;
+}
+.section-eyebrow::before {
+  content:''; width:28px; height:1px; background:var(--red);
+}
+.section-title {
+  font-size:clamp(2rem, 4vw, 3.5rem);
+  font-weight:800; letter-spacing:-.04em;
+  line-height:1.05; margin-bottom:48px;
+}
+.section-title span { color:var(--red); }
+
+.science-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:2px; background:var(--rule);
+  border:1px solid var(--rule);
+}
+.science-cell {
+  background:var(--paper); padding:36px 32px;
+}
+.science-cell.dark {
+  background:var(--ink); color:var(--paper);
+}
+.science-cell.accent {
+  background:var(--red); color:#fff;
+}
+.cell-label {
+  font-family:var(--mono); font-size:.6rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  opacity:.5; margin-bottom:12px;
+}
+.cell-stat {
+  font-size:clamp(2.2rem,4vw,3.8rem);
+  font-weight:800; letter-spacing:-.04em;
+  line-height:1; margin-bottom:10px;
+}
+.cell-desc {
+  font-size:.9rem; line-height:1.68; opacity:.78;
+  max-width:320px;
+}
+.cell-desc a {
+  color:inherit; border-bottom:1px solid rgba(255,255,255,.3);
+  padding-bottom:1px;
+}
+.science-cell:not(.dark):not(.accent) .cell-desc {
+  color: var(--mid);
+}
+.science-cell:not(.dark):not(.accent) .cell-desc a {
+  border-bottom:1px solid rgba(13,13,13,.25);
+}
+.science-cell:not(.dark):not(.accent) .cell-desc a:hover {
+  color:var(--red); border-color:var(--red);
+}
+
+/* ── TALKS ── */
+.talks-section {
+  padding: 90px var(--pad);
+  background: var(--paper2);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.talks-inner { max-width:var(--max); margin:0 auto; }
+.talks-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:2px; background:var(--rule); margin-top:48px;
+}
+.talk-card {
+  background:var(--paper); padding:32px 30px;
+  transition:background .2s;
+}
+.talk-card:hover { background:#fff; }
+.talk-num {
+  font-family:var(--mono); font-size:.58rem;
+  letter-spacing:.16em; color:var(--red); margin-bottom:14px;
+}
+.talk-title {
+  font-size:1.15rem; font-weight:700;
+  letter-spacing:-.02em; margin-bottom:12px; line-height:1.2;
+}
+.talk-desc {
+  font-size:.88rem; color:var(--mid); line-height:1.68;
+}
+
+/* ── PROOF ── */
+.proof-section {
+  padding: 90px var(--pad);
+  max-width:var(--max); margin:0 auto;
+}
+.proof-grid {
+  display:grid; grid-template-columns: repeat(3,1fr);
+  gap:2px; background:var(--rule);
+  border:1px solid var(--rule); margin-top:48px;
+}
+.proof-cell { background:var(--paper); padding:32px 28px; }
+.proof-cell-label {
+  font-family:var(--mono); font-size:.58rem;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--red); margin-bottom:10px;
+}
+.proof-cell-head {
+  font-size:1rem; font-weight:700;
+  letter-spacing:-.01em; margin-bottom:10px; line-height:1.3;
+}
+.proof-cell-body {
+  font-size:.85rem; color:var(--mid); line-height:1.65;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  padding:100px var(--pad);
+  background:var(--ink); color:var(--paper);
+  text-align:center;
+}
+.final-cta h2 {
+  font-size:clamp(2.5rem,6vw,5.5rem);
+  font-weight:800; letter-spacing:-.045em;
+  line-height:1; margin-bottom:16px;
+}
+.final-cta h2 span { color:var(--red); }
+.final-cta .cta-sub {
+  font-size:1.05rem; color:rgba(255,255,255,.55);
+  line-height:1.75; margin-bottom:40px;
+  max-width:520px; margin-left:auto; margin-right:auto;
+}
+.final-cta .cta-sub em {
+  color:rgba(255,255,255,.35); font-style:italic;
+}
+.final-contact {
+  display:flex; flex-direction:column;
+  align-items:center; gap:10px;
+  max-width:360px; margin:0 auto;
+}
+.final-chip {
+  width:100%; font-family:var(--mono); font-size:.72rem;
+  letter-spacing:.06em; padding:14px 24px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  transition:all .2s;
+  clip-path: polygon(0 0,100% 0,100% 68%,95% 100%,0 100%);
+}
+.final-chip.f-primary {
+  background:var(--red); color:#fff; font-weight:700;
+  border:1.5px solid var(--red);
+}
+.final-chip.f-primary:hover {
+  background:#fff; color:var(--red);
+  box-shadow:0 8px 32px rgba(212,32,32,.3);
+}
+.final-chip.f-outline {
+  background:transparent; color:rgba(255,255,255,.65);
+  border:1.5px solid rgba(255,255,255,.15);
+}
+.final-chip.f-outline:hover {
+  border-color:rgba(255,255,255,.45); color:#fff;
+}
+
+/* ── FOOTER ── */
+.footer-fine {
+  padding:32px var(--pad);
+  background:var(--ink);
+  border-top:1px solid rgba(255,255,255,.07);
+  font-family:var(--mono); font-size:.6rem;
+  letter-spacing:.1em; color:rgba(255,255,255,.18);
+  text-align:center; line-height:2.2;
+}
+.footer-fine em {
+  color:rgba(255,255,255,.32); font-style:italic;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(24px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width:860px) {
+  .hero { grid-template-columns:1fr; min-height:auto; }
+  .hero-left {
+    border-right:none; border-bottom:1px solid var(--rule);
+    min-height:auto; padding:100px var(--pad) 60px;
+  }
+  .hero-right { min-height:auto; padding:60px var(--pad) 80px; }
+  .science-grid, .talks-grid { grid-template-columns:1fr; }
+  .proof-grid { grid-template-columns:1fr 1fr; }
+  .photo-wrap { width:140px; height:140px; }
+  .nav-tag { display:none; }
+}
+@media (max-width:520px) {
+  .proof-grid  { grid-template-columns:1fr; }
+  .hero-name   { font-size:clamp(3rem,14vw,4rem); }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <span class="nav-logo">Conversa<span>Trait</span>_</span>
+  <span class="nav-tag">
+    105k LOC &nbsp;·&nbsp; BUILT SOLO &nbsp;·&nbsp; YES, CHAD IS HIS REAL NAME<br>
+    Booking: <a href="tel:6503154084">650-315-4084</a>
+  </span>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-left">
+    <div class="hero-tag">Guest One-Sheet &nbsp;·&nbsp; yes, this is really the url</div>
+
+    <div class="hero-name">
+      <div class="line"><span id="n1">Chad</span></div>
+      <div class="line"><span id="n2">Keith.</span></div>
+    </div>
+
+    <div class="hero-product">
+      Founder &amp; CEO &mdash; <em>ConversaTrait</em>
+    </div>
+
+    <p class="hero-pitch">
+      Chad built an AI personality analysis engine —
+      29 modes, 105,000 lines of code —
+      <strong>solo, in under a year, for around $500.</strong>
+      <strong>(Yes, five hundred dollars. American.)</strong>
+      The underlying science was just validated by a peer-reviewed
+      study in <em>Nature Human Behaviour.</em>
+      He's here to talk about what that actually means for how
+      we understand each other.
+    </p>
+
+    <p class="hero-aside">
+      // the domain is ironic. the product isn't.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="tel:6503154084" class="btn btn-dark">
+        📞 &nbsp;Call to Book
+      </a>
+      <a href="https://www.conversatrait.com" target="_blank" class="btn btn-outline">
+        conversatrait.com
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+
+    <div class="photo-wrap">
+      <img src="headshot.jpg" alt="Chad Keith">
+    </div>
+
+    <div class="quick-facts">
+      <div class="fact-row">
+        <div class="fact-num">105<em>k</em></div>
+        <div class="fact-text">
+          Lines of code
+          <small>built solo. no team.</small>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-num">29</div>
+        <div class="fact-text">
+          Analysis modes
+          <small>one conversation input</small>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-num"><em>&lt;</em>1yr</div>
+        <div class="fact-text">
+          Time to build
+          <small>~$500 total spend (no, seriously)</small>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-num">r<em>.85</em></div>
+        <div class="fact-text">
+          BFI correlation
+          <small>internal pilot vs. clinical baseline</small>
         </div>
       </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Performance Analytics (if needed) -->
-    <script>
-      // Basic performance tracking
-      window.addEventListener('load', () => {
-        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-        console.log('Portfolio loaded in:', loadTime + 'ms');
-      });
-    </script>
-  </body>
+
+    <div>
+      <div class="contact-label">Preferred contact</div>
+      <div class="contact-col">
+        <a href="tel:6503154084" class="contact-line primary">
+          📞 &nbsp;650-315-4084 &nbsp;·&nbsp; call. i actually answer.
+        </a>
+        <a href="mailto:chad@conversatrait.com" class="contact-line">
+          ✉ &nbsp;chad@conversatrait.com
+        </a>
+        <a href="https://linkedin.com/in/chadpkeith" target="_blank" class="contact-line">
+          in &nbsp;linkedin.com/in/chadpkeith
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SCROLLING BAND ── -->
+<div class="divider-band">
+  <span class="db-label">// 29 modes</span>
+  <div class="db-scroll">
+    <div class="db-track" id="dbt"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SCIENCE
+══════════════════════════════════════ -->
+<section class="science-section reveal" id="science">
+  <div class="section-eyebrow">The Science</div>
+  <h2 class="section-title">
+    The thesis is<br><span>peer-reviewed.</span>
+  </h2>
+
+  <div class="science-grid">
+
+    <div class="science-cell dark">
+      <div class="cell-label">Nature Human Behaviour · Feb 2025</div>
+      <div class="cell-stat">Proven.</div>
+      <p class="cell-desc">
+        A peer-reviewed study in
+        <a href="https://www.nature.com/articles/s41562-025-02397-x"
+           target="_blank"><em>Nature Human Behaviour</em></a>
+        found that large language models predict personality traits
+        more accurately than close friends and family —
+        from text alone. ConversaTrait was already built on
+        this premise when the study published.
+      </p>
+    </div>
+
+    <div class="science-cell accent">
+      <div class="cell-label">Internal Pilot Study</div>
+      <div class="cell-stat">r = .85</div>
+      <p class="cell-desc">
+        Correlation with clinical Big Five Inventory baseline
+        across an internal pilot cohort.
+        External replication is the next step.
+      </p>
+    </div>
+
+    <div class="science-cell">
+      <div class="cell-label">The Input</div>
+      <div class="cell-stat" style="font-size:1.6rem;letter-spacing:-.02em;line-height:1.3;">
+        Any conversation.<br>Any platform.
+      </div>
+      <p class="cell-desc">
+        WhatsApp, Discord, email, SMS, interview transcripts.
+        If it's text, it's data. No surveys. No self-report bias.
+        No 200-question form nobody actually finishes.
+      </p>
+    </div>
+
+    <div class="science-cell">
+      <div class="cell-label">The Model Gap</div>
+      <div class="cell-stat" style="font-size:1.6rem;letter-spacing:-.02em;line-height:1.3;">
+        GPT-4.1 → 5.3
+      </div>
+      <p class="cell-desc">
+        The Nature study used GPT-4.1.
+        ConversaTrait runs on GPT-5.3 and current Gemini models.
+        The accuracy delta between that study
+        and what's possible right now is not small.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TALKS
+══════════════════════════════════════ -->
+<section class="talks-section" id="talks">
+  <div class="talks-inner">
+    <div class="section-eyebrow reveal">Talk Topics</div>
+    <h2 class="section-title reveal">
+      What Chad<br><span>talks about.</span>
+    </h2>
+
+    <div class="talks-grid">
+
+      <div class="talk-card reveal">
+        <div class="talk-num">01</div>
+        <div class="talk-title">Personality Without Permission</div>
+        <p class="talk-desc">
+          AI can now assess who you are from the texts you already sent.
+          What that means for hiring, relationships, mental health,
+          and everything we thought we knew about human self-knowledge.
+        </p>
+      </div>
+
+      <div class="talk-card reveal">
+        <div class="talk-num">02</div>
+        <div class="talk-title">Building in the Age of AI — For Real</div>
+        <p class="talk-desc">
+          105,000 lines of code. Solo. Under a year. About $500.
+          What actually happens when one person decides to build
+          something serious with modern tools and no outside help.
+          Not a fairy tale. A how.
+        </p>
+      </div>
+
+      <div class="talk-card reveal">
+        <div class="talk-num">03</div>
+        <div class="talk-title">The Conversation You've Already Had</div>
+        <p class="talk-desc">
+          Every message you've ever sent is a psychological dataset.
+          The science behind what language reveals about personality —
+          and why it's more honest than anything
+          you'd say about yourself on purpose.
+        </p>
+      </div>
+
+      <div class="talk-card reveal">
+        <div class="talk-num">04</div>
+        <div class="talk-title">Understanding People Better</div>
+        <p class="talk-desc">
+          The practical version: using AI analysis to reduce
+          miscommunication, improve team fit, and actually understand
+          the people in your life — including yourself —
+          more clearly than you do right now.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PROOF
+══════════════════════════════════════ -->
+<section class="proof-section reveal" id="proof">
+  <div class="section-eyebrow">Why This Conversation</div>
+  <h2 class="section-title">
+    What makes this<br><span>worth an episode.</span>
+  </h2>
+
+  <div class="proof-grid">
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">The Build</div>
+      <div class="proof-cell-head">
+        Silicon Valley native.<br>Built it anyway.
+      </div>
+      <p class="proof-cell-body">
+        Grew up in the Valley. Came back to tech not through
+        a company but through conviction. Shipped a 105k-line
+        product solo on a shoestring because the idea
+        was worth it.
+      </p>
+    </div>
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">The Timing</div>
+      <div class="proof-cell-head">
+        The science just<br>caught up.
+      </div>
+      <p class="proof-cell-body">
+        ConversaTrait was already built when
+        <em>Nature Human Behaviour</em> published their
+        LLM personality study in February 2025.
+        The product and the proof arrived at the same time.
+        Nobody planned that. It just happened.
+      </p>
+    </div>
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">The Story</div>
+      <div class="proof-cell-head">
+        He used it on<br>his own family.
+      </div>
+      <p class="proof-cell-body">
+        Ran a conversation with his estranged brother
+        through the engine. They figured out in one sitting
+        why they hadn't gotten along for 30 years.
+        That's the product working exactly as intended.
+      </p>
+    </div>
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">The Audience</div>
+      <div class="proof-cell-head">
+        Everyone who<br>communicates.
+      </div>
+      <p class="proof-cell-body">
+        Hiring managers, therapists, coaches, couples,
+        founders, HR teams, people trying to understand
+        someone they care about.
+        The use case is as universal as conversation itself.
+      </p>
+    </div>
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">Clinical Validation</div>
+      <div class="proof-cell-head">
+        A therapist<br>signed an LOI.
+      </div>
+      <p class="proof-cell-body">
+        A licensed marriage and family therapist reviewed
+        the platform, joined the advisory board, and committed
+        to a clinical pilot. Unsolicited.
+        She asked to see it first.
+      </p>
+    </div>
+
+    <div class="proof-cell">
+      <div class="proof-cell-label">The Product</div>
+      <div class="proof-cell-head">
+        29 modes.<br>Live demo available.
+      </div>
+      <p class="proof-cell-body">
+        Big Five, MBTI, IQ estimation, conflict resolution,
+        romance indicators, legal analysis, crisis detection,
+        and more. Paste a conversation. Get a report.
+        Chad can demo live on-air.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════ -->
+<div class="final-cta" id="contact">
+  <h2>Book the<br><span>conversation.</span></h2>
+  <p class="cta-sub">
+    Call is the fastest way to reach Chad. He answers.
+    No gatekeepers, no assistants, no Calendly link where
+    you pick a 23-minute slot two weeks from now.<br><br>
+    <em>Just call. His name is Chad, not his fault,
+    he's dealing with it.</em>
+  </p>
+  <div class="final-contact">
+    <a href="tel:6503154084" class="final-chip f-primary">
+      📞 &nbsp;650-315-4084
+    </a>
+    <a href="mailto:chad@conversatrait.com" class="final-chip f-outline">
+      chad@conversatrait.com
+    </a>
+    <a href="https://linkedin.com/in/chadpkeith" target="_blank" class="final-chip f-outline">
+      linkedin.com/in/chadpkeith
+    </a>
+    <a href="https://www.conversatrait.com" target="_blank" class="final-chip f-outline">
+      conversatrait.com
+    </a>
+  </div>
+</div>
+
+<div class="footer-fine">
+  © 2025–2026 CONVERSATRAIT &nbsp;·&nbsp;
+  chad@conversatrait.com &nbsp;·&nbsp;
+  650-315-4084<br>
+  "Technological Advancement Without Human Displacement"<br>
+  <em>mynamesucks.com — because it does, a little.</em>
+</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ── HERO ENTRANCE ── */
+gsap.from(['#n1','#n2'], {
+  y:'105%', opacity:0, duration:1.0,
+  stagger:.08, ease:'expo.out', delay:.1
+});
+gsap.from([
+  '.hero-tag','.hero-product','.hero-pitch',
+  '.hero-aside','.hero-cta-row'
+], {
+  opacity:0, y:16, duration:.7,
+  stagger:.1, ease:'power2.out', delay:.5
+});
+gsap.from(['.photo-wrap','.quick-facts','.contact-col'], {
+  opacity:0, y:20, duration:.7,
+  stagger:.12, ease:'power2.out', delay:.4
+});
+
+/* ── SCROLLING BAND ── */
+(function(){
+  const modes = [
+    'Big Five','MBTI','IQ Estimation','Cognitive Flexibility',
+    'Comprehensive Profile','Behavioral Veracity','(NOT) Legal Advice',
+    'Implicit Bias','Cognitive Load','Argument Referee',
+    'Relational Ethics','Romance Indicator','Conflict Resolution',
+    'Emotion Analysis','Hidden Talents','Resolution Predictors',
+    'Motivational Drivers','Neurodivergent Comms','Evolution Tracking',
+    'Narrative Coherence','Cultural Compatibility','Comparative Analysis',
+    'Career Guidance','Live Interview','Psychological Patterns',
+    'MMPI Analysis','Argument Analysis','Candidate Comparison',
+    'Simple Text Analysis'
+  ];
+  const track = document.getElementById('dbt');
+  for(let i=0;i<4;i++) modes.forEach((m,j)=>{
+    const s = document.createElement('span');
+    s.className = 'db-item' + (j%7===0?' hi':'');
+    s.textContent = m + '  ·  ';
+    track.appendChild(s);
+  });
+
+  let x=0, dir=1, lastY=0;
+  window.addEventListener('scroll',()=>{
+    dir = window.scrollY > lastY ? 1 : -1;
+    lastY = window.scrollY;
+  },{ passive:true });
+
+  (function loop(){
+    x -= .45*dir;
+    const w = track.scrollWidth/4;
+    if(x < -w) x=0;
+    if(x > 0)  x=-w;
+    track.style.transform=`translateX(${x}px)`;
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ── SCROLL REVEALS ── */
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.to(el,{
+    scrollTrigger:{ trigger:el, start:'top 88%' },
+    opacity:1, y:0, duration:.65, ease:'power2.out'
+  });
+});
+
+['.science-grid','.talks-grid','.proof-grid'].forEach(sel=>{
+  const grid = document.querySelector(sel);
+  if(!grid) return;
+  gsap.from(grid.children,{
+    scrollTrigger:{ trigger:grid, start:'top 85%' },
+    opacity:0, y:24, stagger:.07, duration:.55, ease:'power2.out'
+  });
+});
+</script>
+</body>
 </html>
